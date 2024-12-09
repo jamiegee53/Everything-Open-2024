@@ -8,6 +8,16 @@ The idea is that we'll copy the Open Data tutes into some directory, build our o
 
 When we're happy with the notebook, we'll fork it and throw it into some Google Colab link that can be accessed publicly.
 
+## Editing `main.ipynb`
+The idea is we want this to work in a fresh environment, as Google Colab starts clean (correct me if wrong pls) - so, it makes sense when you do this, you want to make an empty virtual environment so you can test that the initial install stuff works. Can do this by either:
+```
+/cvmfs/sft.cern.ch/lcg/views/LCG_102cuda/x86_64-centos7-gcc8-opt/bin/python3 -m venv venv
+source venv/bin/activate
+```
+then use this environment as the kernel for jupyter - otherwise, in VisualStudioCode, the jupyter extention will allow you to make a venv on the fly (would recommend) - be sure to use the python path as above, otherwise your environment will be created with an out-of-date `python3` release. Moreover, on account of centos7 EOL, if you do this on `thread1`, you'll need to be using the pre-release versions of the relevant extentions (being Python and jupyter).
+
++ Whenever you push, please be sure to Clear All Outputs first! Otherwise, your debugging and whatnot will clutter the notebook for everyone
+
 ## Useful links
 ### [ATLAS Open Data](https://atlas.cern/Resources/Opendata)
 [HyyAnalysisNew.ipynb](https://notebooks.gesis.org/binder/jupyter/user/atlas-outreach--ection-opendata-o9vlrfk3/lab/tree/13-TeV-examples/uproot_python/HyyAnalysisNew.ipynb) - rediscoving the Higgs. Verbose
